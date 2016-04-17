@@ -1,0 +1,39 @@
+#!TODO: Implement Newton's Method for only 2 possible values of Y. Then generalize up to k values.
+
+#In Softmax: Instead of using the Sigmoid function, 1 / 1 + e^-z, we're using another exponential family
+			 distribution, e^(something). The sum of all our probabilities is 1, which is why we divide
+			 by a summation in the cost function.
+
+#For softmax
+#Probability that y(i) == k, given features x(i) paramaterized by theta[k]
+#where y(i) is the 
+
+#Returns an unnormallized probability, which needs to be normallized.
+#This is the probability that feature vec x corresponds to scalar label k, given parameters theta corresponding to that value k.
+probabilty(k, x, theta):
+	#Take the parameter vector for class k, transpose and multiply by the feature vector to get a scalar probability value.
+	return exp(transpose(theta) * x)
+
+
+#This is a loop that gives the value of cost function, J(theta).
+#We're trying to __maximize__ this output by changing theta.
+cost_function():
+	#for each training example
+	for i in training_data:
+		probabilities = list(0)	#I want probabilities[1] to correspond to k==1
+		#Get the probability value for each possible class given x[i].
+		for k in labels:
+			probability_of_k = probability(x[i], theta[k])
+			normalizer = normalizer + probability_k
+			probabilities.append(probability_of_k)
+
+		for k in labels:
+			if y[i]==k:
+				sum += log(Probability(k, x[i], theta))	
+
+#This is a loop that finds theta parameters.
+find_theta():
+	while(!convergent):
+		for j in theta:	
+			theta[j] = theta[j] - derivative(log_likeliness_of_theta()) 
+								/ derivative(derivative(log_likeliness_of_theta()))
