@@ -17,9 +17,9 @@ Learn.custom_demo()
     Once you're done there's an option to save the dataset you input to disk at the end.
     If you want to load old data sets saved to disk, set use_old_data=True.
 
-Draw.py()
+Draw.py
     Used for inputting images from the screen.
     Designed to be most naturally usable on a touchscreen, but should work with any mouse type device.
 
-Data.py()
+Data.py
     Holds features, labels, various metadata. mnist.p and custom_data.p are pickled Data objects.
